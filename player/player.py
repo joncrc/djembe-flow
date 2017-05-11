@@ -1,5 +1,6 @@
 from pydub import AudioSegment
 from pydub.playback import play
+import scorer
 
 # Initial media AudioSegments
 bass = AudioSegment.from_wav("../media/djembe/D2_O.wav")
@@ -32,55 +33,16 @@ k_bell = k_bell -13
 k_open = k_open +5
 k_mute = k_mute +5
 
-# Load scores
-dj1_bass_score = "1000100010001000"
-dj1_tone_score = "0011000000110000"
-dj1_slap_score = "0000001000000010"
 
-dj2_bass_score = "0000000000000000"
-dj2_tone_score = "0000001100000011"
-dj2_slap_score = "1001100010011000"
-
-s_bell_score = "1010101010101010"
-s_open_score = "1000000000101010"
-s_mute_score = "0000100010000000"
-
-k_bell_score = "1010101010101010"
-k_open_score = "1000100010001000"
-k_mute_score = "0000000000000000"
-
-d_bell_score = "1011011010110110"
-d_open_score = "1000001010000010"
-d_mute_score = "0000000000000000"
 
 # Initial djembe score
-score = {}
-score["dj1_bass_score"] = list(dj1_bass_score)
-score["dj1_tone_score"] = list(dj1_tone_score)
-score["dj1_slap_score"] = list(dj1_slap_score)
-score["dj2_bass_score"] = list(dj2_bass_score)
-score["dj2_tone_score"] = list(dj2_tone_score)
-score["dj2_slap_score"] = list(dj2_slap_score)
-
-score["s_bell_score"] = list(s_bell_score)
-score["s_open_score"] = list(s_open_score)
-score["s_mute_score"] = list(s_mute_score)
-
-score["k_bell_score"] = list(k_bell_score)
-score["k_open_score"] = list(k_open_score)
-score["k_mute_score"] = list(k_mute_score)
-
-score["d_bell_score"] = list(d_bell_score)
-score["d_open_score"] = list(d_open_score)
-score["d_mute_score"] = list(d_mute_score)
-
-
+score = scorer.get_scores("../scores/moribayassa.sc")
 
 duration = 170
-volume_dj1 = 1
+volume_dj1 = 0
 volume_dj2 = 0
-volume_sangban = 1
-volume_kenkeni = 1
+volume_sangban = 0
+volume_kenkeni = 0
 volume_dundunba = 1
 
 segments = []  # The list each element is overlaid segment
