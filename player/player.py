@@ -2,48 +2,51 @@ from pydub import AudioSegment
 from pydub.playback import play
 import scorer
 
-# Initial media AudioSegments
-bass = AudioSegment.from_wav("../media/djembe/D2_O.wav")
-tone = AudioSegment.from_wav("../media/djembe/D2_U.wav")
-slap = AudioSegment.from_wav("../media/djembe/D2_V.wav")
 
-s_bell = AudioSegment.from_wav("../media/dundun/G_S_O.wav")
-s_open = AudioSegment.from_wav("../media/dundun/S_O.wav")
-s_mute = AudioSegment.from_wav("../media/dundun/S_M.wav")
+# Initial old_media AudioSegments
+bass = AudioSegment.from_wav("../media/bass3.wav")
+tone = AudioSegment.from_wav("../media/tone2.wav")
+slap = AudioSegment.from_wav("../media/slap2.wav")
+#
+# s_bell = AudioSegment.from_wav("../media/G_S_O.wav")
+# s_open = AudioSegment.from_wav("../media/S_O.wav")
+# s_mute = AudioSegment.from_wav("../media/S_M.wav")
+#
+# k_bell = AudioSegment.from_wav("../media/G_K_O.wav")
+# k_open = AudioSegment.from_wav("../media/K_O.wav")
+# k_mute = AudioSegment.from_wav("../media/K_M.wav")
+#
+# d_bell = AudioSegment.from_wav("../media/G_D_O.wav")
+# d_open = AudioSegment.from_wav("../media/D_O.wav")
+# d_mute = AudioSegment.from_wav("../media/D_M.wav")
 
-k_bell = AudioSegment.from_wav("../media/dundun/G_K_O.wav")
-k_open = AudioSegment.from_wav("../media/dundun/K_O.wav")
-k_mute = AudioSegment.from_wav("../media/dundun/K_M.wav")
 
-d_bell = AudioSegment.from_wav("../media/dundun/G_D_O.wav")
-d_open = AudioSegment.from_wav("../media/dundun/D_O.wav")
-d_mute = AudioSegment.from_wav("../media/dundun/D_M.wav")
 
-slap = slap - 3
-
-s_bell = s_bell -10
-s_open = s_open +5
-s_mute = s_mute +5
-
-d_bell = d_bell -10
-d_open = d_open +5
-d_mute = d_mute +5
-
-k_bell = k_bell -13
-k_open = k_open +5
-k_mute = k_mute +5
+# slap = slap - 3
+#
+# s_bell = s_bell -10
+# s_open = s_open +5
+# s_mute = s_mute +5
+#
+# d_bell = d_bell -10
+# d_open = d_open +5
+# d_mute = d_mute +5
+#
+# k_bell = k_bell -13
+# k_open = k_open +5
+# k_mute = k_mute +5
 
 
 
 # Initial djembe score
 score = scorer.get_scores("../scores/moribayassa.sc")
 
-duration = 170
-volume_dj1 = 0
-volume_dj2 = 0
+duration = 160
+volume_dj1 = 1
+volume_dj2 = 1
 volume_sangban = 0
 volume_kenkeni = 0
-volume_dundunba = 1
+volume_dundunba = 0
 
 segments = []  # The list each element is overlaid segment
 
